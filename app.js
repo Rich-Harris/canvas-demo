@@ -13,6 +13,12 @@ canvas.addEventListener( 'mousemove', function ( event ) {
 	y = event.clientY;
 });
 
+canvas.addEventListener( 'touchmove', function ( event ) {
+	event.preventDefault(); // this prevents the page from sliding around
+	x = event.touches[0].clientX;
+	y = event.touches[0].clientY;
+});
+
 // this function runs 60 times a second...
 function loop () {
 	requestAnimationFrame( loop ); // ...because of this line
